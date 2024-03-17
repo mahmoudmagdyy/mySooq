@@ -22,12 +22,16 @@ class CategoryHorizontalList extends StatelessWidget {
         ? valueHolder.loadingShimmerItemCount!
         : categoryProvider.categoryList.data!.length;
     return Container(
-      height: PsDimens.space104,
+      height: PsDimens.space220,
       width: MediaQuery.of(context).size.width,
-      child: ListView.builder(
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          childAspectRatio: 0.9,
+        ),
           shrinkWrap: false,
+          physics: NeverScrollableScrollPhysics(),
           padding: const EdgeInsets.symmetric(horizontal: PsDimens.space8),
-          scrollDirection: Axis.horizontal,
           itemCount: count,
           itemBuilder: (BuildContext context, int index) {
             return CustomCategoryHorizontalListItem(
@@ -36,7 +40,7 @@ class CategoryHorizontalList extends StatelessWidget {
                   : categoryProvider.categoryList.data![index],
               isLoading: isLoading,
             );
-          }),
+          }, ),
     );
   }
 }

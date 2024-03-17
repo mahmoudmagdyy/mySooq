@@ -92,15 +92,15 @@ class PsDynamicWidget extends StatelessWidget {
           animationController: animationController!,
         ),
       },
-      'blog': <String, Widget>{
-        PsWidgetConst.blog_detail: BlogDetailsWidget(
-          blog: blog ?? Blog(),
-          heroTagImage: heroTagImage ?? '',
-        ),
-        PsWidgetConst.blog_product_slider: CustomBlogProductSliderListWidget(
-          animationController: animationController,
-        ),
-      },
+      // 'blog': <String, Widget>{
+      //   PsWidgetConst.blog_detail: BlogDetailsWidget(
+      //     blog: blog ?? Blog(),
+      //     heroTagImage: heroTagImage ?? '',
+      //   ),
+      //   PsWidgetConst.blog_product_slider: CustomBlogProductSliderListWidget(
+      //     animationController: animationController,
+      //   ),
+      // },
       'product': <String, Widget>{
         PsWidgetConst.paid_ad_product:
             CustomHomePaidAdProductHorizontalListWidget(

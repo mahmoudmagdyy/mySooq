@@ -27,7 +27,7 @@ class HomeCategoryHorizontalListWidget extends StatelessWidget {
                     categoryProvider.currentStatus == PsStatus.BLOCK_LOADING)
                 ? Column(children: <Widget>[
                     PsListHeaderWidget(
-                      headerName: 'dashboard__category_looking_for'.tr,
+                      headerName: 'dashboard__categories'.tr,
                       headerDescription: '',
                       viewAllClicked: () {
                         Navigator.pushNamed(context, RoutePaths.categoryList,

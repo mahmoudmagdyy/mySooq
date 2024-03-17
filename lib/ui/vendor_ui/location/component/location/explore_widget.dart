@@ -54,7 +54,7 @@ class ExploreWidget extends StatelessWidget {
           }
         },
         child: Container(
-          height: PsDimens.space44,
+          height: PsDimens.space50,
           width: double.infinity,
           alignment: Alignment.center,
           decoration: BoxDecoration(

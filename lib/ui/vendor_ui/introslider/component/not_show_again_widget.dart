@@ -19,7 +19,7 @@ class _NotShowAgainWidgetState extends State<NotShowAgainWidget> {
     return Padding(
       padding: const EdgeInsets.only(bottom: PsDimens.space8),
       child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Checkbox(

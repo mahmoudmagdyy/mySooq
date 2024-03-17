@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sooq/config/ps_colors.dart';
@@ -118,15 +119,21 @@ class _ItemLocationViewState extends State<ItemLocationView> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: PsDimens.space104,
+             SizedBox(
+              height:MediaQuery.of(context).size.height*0.03,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 CustomHeaderPhotoWidget(),
+                SizedBox(
+                  height:MediaQuery.of(context).size.height*0.01,
+                ),
                 CustomLocationTitle(),
+                SizedBox(
+                  height:MediaQuery.of(context).size.height*0.03,
+                ),
                 CustomSelectCityWidget(
                     searchCityNameController: searchCityNameController,
                     searchTownshipNameController: searchTownshipNameController),
@@ -134,6 +141,9 @@ class _ItemLocationViewState extends State<ItemLocationView> {
                   CustomSelectTownshipWidget(
                       searchTownshipNameController:
                           searchTownshipNameController),
+                SizedBox(
+                  height:MediaQuery.of(context).size.height*0.07,
+                ),
                 CustomExploreWidget(),
               ],
             ),

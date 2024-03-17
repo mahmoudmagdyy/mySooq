@@ -18,7 +18,7 @@ class ExploreButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
       child: MaterialButton(
-        height: 40,
+        height: 50,
         minWidth: double.infinity,
         color: Theme.of(context).primaryColor,
         child: Text(

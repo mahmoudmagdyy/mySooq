@@ -56,12 +56,12 @@ class CategoryVerticalListItem extends StatelessWidget {
                           //cat image
                           ClipRRect(
                             borderRadius:
-                                BorderRadius.circular(PsDimens.space24),
+                                BorderRadius.circular(PsDimens.space6),
                             child: Container(
-                              width: PsDimens.space44,
-                              height: PsDimens.space44,
+                              width: PsDimens.space60,
+                              height: PsDimens.space60,
                               color: Utils.isLightMode(context)
-                                  ? PsColors.text100
+                                  ? PsColors.text50
                                   : PsColors.achromatic200,
                               padding: const EdgeInsets.all(PsDimens.space10),
                               child: PsNetworkIcon(

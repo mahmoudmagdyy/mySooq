@@ -67,26 +67,36 @@ class _IntroSliderViewState extends State<IntroSliderView>
                         children: <Widget>[
                           CustomSkipButton(
                               fromSettingSlider: widget.fromSettingSlider),
-                          const SizedBox(
-                            height: PsDimens.space22,
+                           SizedBox(
+                            height: MediaQuery.of(context).size.height*0.03,
                           ),
                           Column(
                             children: <Widget>[
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
+                                   SizedBox(
+                                    height: MediaQuery.of(context).size.height*0.02,
+                                  ),
                                   CustomSliderPhoto(
                                       orientation: Orientation.portrait,
                                       currentIndex: currentIndex),
+                                   SizedBox(
+                                    height:MediaQuery.of(context).size.height*0.05,
+                                  ),
+                                  CustomSliderTitle(currentIndex: currentIndex),
+                                  CustomDescription(currentIndex: currentIndex),
+                                   SizedBox(
+                                    height: MediaQuery.of(context).size.height*0.06,
+                                  ),
                                   CustomDotList(
                                       orientation: Orientation.portrait,
                                       currentIndex: currentIndex),
-                                  CustomSliderTitle(currentIndex: currentIndex),
-                                  CustomDescription(currentIndex: currentIndex),
+
                                 ],
                               ),
-                              const SizedBox(
-                                height: PsDimens.space32,
+                               SizedBox(
+                                height: MediaQuery.of(context).size.height*0.06,
                               ),
                               //next, skip buttons
                               if (currentIndex < sliderPageCount - 1)
@@ -98,6 +108,7 @@ class _IntroSliderViewState extends State<IntroSliderView>
                                     CustomExploreButton(
                                         fromSettingSlider:
                                             widget.fromSettingSlider),
+                                   const SizedBox(height: 10,),
                                     CustomNotShowAgainWidget(),
                                   ],
                                 ),

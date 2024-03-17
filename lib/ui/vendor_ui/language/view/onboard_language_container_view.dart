@@ -114,7 +114,7 @@ class _LanguageSettingContainerViewState
                   ),
                 ),
                 const SizedBox(
-                  height: PsDimens.space104,
+                  height: PsDimens.space20,
                 ),
                 Container(
                   margin: const EdgeInsets.only(
@@ -123,16 +123,23 @@ class _LanguageSettingContainerViewState
                     'assets/images/onboard_language.svg',
                   ),
                 ),
+                const SizedBox(
+                  height: PsDimens.space20,
+                ),
+
                 Text('language_selection__choose'.tr,
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
                         .copyWith(fontWeight: FontWeight.bold)),
                 CustomChooseLanguageDropDownWidget(),
+                const SizedBox(
+                  height: PsDimens.space60,
+                ),
                 InkWell(
                   child: Container(
                     margin: const EdgeInsets.all(PsDimens.space16),
-                    height: PsDimens.space40,
+                    height: PsDimens.space50,
                     width: double.infinity,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
