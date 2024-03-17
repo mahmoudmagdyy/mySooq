@@ -44,6 +44,7 @@ class HomePaidAdProductHorizontalListWidget extends StatelessWidget {
                             },
                           ),
                           CustomProductHorizontalListWidget(
+
                             tagKey: paidAdItemProvider.hashCode.toString(),
                             productList: paidAdItemProvider.productList.data,
                             isLoading: paidAdItemProvider.currentStatus ==

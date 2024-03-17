@@ -75,4 +75,5 @@ class PsDimens {
   static const double space400 = 400;
   static const double space420 = 420;
   static const double space460 = 460;
+  static const double space500 = 500;
 }
