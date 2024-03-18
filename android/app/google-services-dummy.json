@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "firebase_url": "https://flutter-store-ecommerce.firebaseio.com",
-    "project_id": "flutter-store-ecommerce",
-    "storage_bucket": "flutter-store-ecommerce.appspot.com"
+    "project_number": "162935625362",
+    "firebase_url": "https://olx-jo-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "olx-jo",
+    "storage_bucket": "olx-jo.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:376000000000:android:bd90000000000000000000",
+        "mobilesdk_app_id": "1:162935625362:android:5f7c670ebd91f84385b84b",
         "android_client_info": {
-          "package_name": "sd.smart.sooq"
+          "package_name": "sd.smart.suqi"
         }
       },
       "oauth_client": [
         {
-          "client_id": "000000000000-00000000000000000000000000000lip.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "sd.smart.sooq",
-            "certificate_hash": "0000000000000000000000000000000000000000"
-          }
-        },
-        {
-          "client_id": "000000000000-00000000000000000000000000000000.apps.googleusercontent.com",
+          "client_id": "162935625362-s2e416guffdum5sd3e59dsac8uuu5r1r.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaS000000-000000000000000000000000000"
+          "current_key": "AIzaSyAe3QKJIED3cATd7M-q9OsWtGqyvbXmQn4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "000000000000-00000000000000000000000000000000.apps.googleusercontent.com",
+              "client_id": "162935625362-s2e416guffdum5sd3e59dsac8uuu5r1r.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

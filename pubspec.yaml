@@ -43,11 +43,11 @@ dependencies:
   url_launcher: ^6.1.11
   carousel_slider: ^4.2.1
 
-  firebase_core: ^2.27.0
+  firebase_core:
   firebase_core_platform_interface: ^5.0.0 #5
   firebase_messaging: ^14.7.19
   firebase_database: ^10.4.9
-  firebase_auth: ^4.17.8
+  firebase_auth:
 
   google_mobile_ads: ^4.0.0 #6
   google_sign_in: ^6.1.3
