@@ -23,6 +23,7 @@ class PsWidgetConst {
   static const String paid_ad_product = 'paid_ad_product';
   //Product
   static const String nearest_product = 'nearest_product';
+
   static const String discount_product = 'discount_product';
   static const String popular_product = 'popular_product';
   static const String item_list_from_followers = 'item_list_from_followers';

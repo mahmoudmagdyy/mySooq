@@ -29,60 +29,67 @@ class ProductPriceWidget extends StatelessWidget {
         valueHolder.isShowDiscount! && product.isDiscountedItem;
     return valueHolder.selectPriceType == PsConst.NORMAL_PRICE ? Row(
               children: <Widget>[
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: <Widget>[
-                                    PsHero(
-                                      tag:'$tagKey${product.id}$PsConst.HERO_TAG__UNIT_PRICE',
-                                      flightShuttleBuilder:
-                                          Utils.flightShuttleBuilder,
-                                      child: Material(
-                                          type: MaterialType.transparency,
-                                          child: Text(
-                                            !showDiscount
-                                                ? product.originalPrice !=
-                                                            '0' &&
-                                                        product.originalPrice !=
-                                                            ''
-                                                    ? '${product.itemCurrency!.currencySymbol}${' '}${Utils.getPriceFormat(product.originalPrice!, valueHolder.priceFormat!)}'
-                                                    : 'item_price_free'.tr
-                                                : '${product.itemCurrency!.currencySymbol}${' '}${Utils.getPriceFormat(product.currentPrice!, valueHolder.priceFormat!)}',
-                                            textAlign: TextAlign.start,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyMedium!
-                                                .copyWith(
-                                                    fontSize: 15, color: Theme.of(context).primaryColor),
-                                          )),
-                                    ),
-                                    Visibility(
-                                        maintainSize: true,
-                                        maintainAnimation: true,
-                                        maintainState: true,
-                                        visible: showDiscount,
-                                        child: Row(
-                                          children: <Widget>[
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: PsDimens.space4),
+                                Container(
+                                  color: Colors.black,
+
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(3.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        PsHero(
+                                          tag:'$tagKey${product.id}$PsConst.HERO_TAG__UNIT_PRICE',
+                                          flightShuttleBuilder:
+                                              Utils.flightShuttleBuilder,
+                                          child: Material(
+                                              type: MaterialType.transparency,
                                               child: Text(
-                                                '${product.itemCurrency!.currencySymbol} ${Utils.getPriceFormat(product.originalPrice!, valueHolder.priceFormat!)}',
+                                                !showDiscount
+                                                    ? product.originalPrice !=
+                                                                '0' &&
+                                                            product.originalPrice !=
+                                                                ''
+                                                        ? '${product.itemCurrency!.currencySymbol}${' '}${Utils.getPriceFormat(product.originalPrice!, valueHolder.priceFormat!)}'
+                                                        : 'item_price_free'.tr
+                                                    : '${product.itemCurrency!.currencySymbol}${' '}${Utils.getPriceFormat(product.currentPrice!, valueHolder.priceFormat!)}',
                                                 textAlign: TextAlign.start,
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodyMedium!
                                                     .copyWith(
-                                                        color: Utils.isLightMode(context) ? PsColors.text600 : PsColors.text300,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough,
-                                                        fontSize: 12),
-                                              ),
-                                            ),
-                                          ],
-                                        ))
-                                  ],
+                                                        fontSize: 15, color:Colors.white),
+                                              )),
+                                        ),
+                                        // Visibility(
+                                        //     maintainSize: true,
+                                        //     maintainAnimation: true,
+                                        //     maintainState: true,
+                                        //     visible: showDiscount,
+                                        //     child: Row(
+                                        //       children: <Widget>[
+                                        //         Padding(
+                                        //           padding: const EdgeInsets.only(
+                                        //               bottom: PsDimens.space4),
+                                        //           child: Text(
+                                        //             '${product.itemCurrency!.currencySymbol} ${Utils.getPriceFormat(product.originalPrice!, valueHolder.priceFormat!)}',
+                                        //             textAlign: TextAlign.start,
+                                        //             style: Theme.of(context)
+                                        //                 .textTheme
+                                        //                 .bodyMedium!
+                                        //                 .copyWith(
+                                        //                     color: Utils.isLightMode(context) ? Colors.white : Colors.white,
+                                        //                     decoration:
+                                        //                         TextDecoration
+                                        //                             .lineThrough,
+                                        //                     fontSize: 12),
+                                        //           ),
+                                        //         ),
+                                        //       ],
+                                        //     ))
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ],
                             )

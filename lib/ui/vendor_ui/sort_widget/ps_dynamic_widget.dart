@@ -215,7 +215,11 @@ class PsDynamicWidget extends StatelessWidget {
       },
       'order_detail': <String, Widget>{
         PsWidgetConst.order_detail: OrderDetailView()
-      }
+      },
+      // 'add_ad': <String, Widget>{
+      //   PsWidgetConst.order_detail: OrderDetailView()
+      // }
+
 
       // 'common': <String, Widget>{
       //   PsWidgetConst.search_header: CustomHomeSearchHeaderWidget(

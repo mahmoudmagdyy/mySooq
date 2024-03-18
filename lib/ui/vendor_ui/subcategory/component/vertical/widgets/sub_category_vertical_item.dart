@@ -107,10 +107,10 @@ class _SubCategoryGridItemState extends State<SubCategoryGridItem> {
                                 borderRadius:
                                     BorderRadius.circular(PsDimens.space24),
                                 child: Container(
-                                  width: PsDimens.space44,
-                                  height: PsDimens.space44,
+                                  width: PsDimens.space100,
+                                  height: PsDimens.space100,
                                   color: Utils.isLightMode(context)
-                                      ? PsColors.text100
+                                      ? PsColors.text50
                                       : PsColors.text300,
                                   padding:
                                       const EdgeInsets.all(PsDimens.space10),

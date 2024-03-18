@@ -24,20 +24,20 @@ class ProductHorizontalListWidget extends StatelessWidget {
     return Container(
         height: height ??
             (valueHolder.isShowOwnerInfo!
-                ? PsDimens.space500
+                ? productList!.length>4&&productList!.length<7?MediaQuery.of(context).size.height*0.45:MediaQuery.of(context).size.height*0.63
                 : PsDimens.space220),
         margin: const EdgeInsets.only(left: PsDimens.space14),
         width: MediaQuery.of(context).size.width,
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-           childAspectRatio: 0.8
+            crossAxisCount: 3,
+           childAspectRatio: 0.7
           ),
             physics: NeverScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
             itemCount: isLoading
                 ? valueHolder.loadingShimmerItemCount
-                : 4,
+                : productList!.length,
             itemBuilder: (BuildContext context, int index) {
               if (!isLoading &&
                   productList![index].adType == PsConst.GOOGLE_AD_TYPE) {

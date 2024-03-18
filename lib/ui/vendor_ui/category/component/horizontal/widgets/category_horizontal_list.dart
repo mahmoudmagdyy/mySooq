@@ -22,11 +22,11 @@ class CategoryHorizontalList extends StatelessWidget {
         ? valueHolder.loadingShimmerItemCount!
         : categoryProvider.categoryList.data!.length;
     return Container(
-      height: PsDimens.space220,
+      height:MediaQuery.of(context).size.height*0.54,
       width: MediaQuery.of(context).size.width,
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
+          crossAxisCount: 3,
           childAspectRatio: 0.9,
         ),
           shrinkWrap: false,

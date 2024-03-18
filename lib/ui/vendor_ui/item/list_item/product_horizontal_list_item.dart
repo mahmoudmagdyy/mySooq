@@ -88,129 +88,137 @@ class ProductHorizontalListItem extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Container(
-                              alignment: Alignment.topLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  if (product.isSoldOutItem)
-                                    Container(
-                                      margin: const EdgeInsets.only(
-                                          top: PsDimens.space4,
-                                          left: PsDimens.space4,
-                                          right: PsDimens.space4),
-                                      height: 25,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              PsDimens.space4),
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: PsDimens.space4,
-                                              left: PsDimens.space4,
-                                              right: PsDimens.space4),
-                                          child: Text('dashboard__sold_out'.tr,
-                                              textAlign: TextAlign.start,
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyMedium!
-                                                  .copyWith(
-                                                      color: PsColors
-                                                          .achromatic50))),
-                                    ),
-                                  if (product.paidStatus ==
-                                      PsConst.PAID_AD_PROGRESS)
-                                    Container(
-                                      margin: const EdgeInsets.only(
-                                          top: PsDimens.space4,
-                                          left: PsDimens.space4,
-                                          right: PsDimens.space4),
-                                      height: 25,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              PsDimens.space4),
-                                          color: PsColors.success400),
-                                      child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: PsDimens.space4,
-                                              left: PsDimens.space4,
-                                              right: PsDimens.space4),
-                                          child: Text(
-                                              'dashboard__is_featured'.tr,
-                                              textAlign: TextAlign.start,
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyMedium!
-                                                  .copyWith(
-                                                      color: PsColors
-                                                          .achromatic50))),
-                                    ),
-                                  if (showDiscount)
-                                    Container(
-                                      margin: const EdgeInsets.only(
-                                          top: PsDimens.space4,
-                                          left: PsDimens.space4,
-                                          right: PsDimens.space4),
-                                      height: 25,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              PsDimens.space4),
-                                          color: PsColors.error500),
-                                      child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: PsDimens.space4,
-                                              left: PsDimens.space4,
-                                              right: PsDimens.space4),
-                                          child: Text(
-                                              '${product.discountRate}% ${'dashboard__is_discount'.tr}',
-                                              textAlign: TextAlign.start,
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyMedium!
-                                                  .copyWith(
-                                                      color: PsColors
-                                                          .achromatic50))),
-                                    ),
-                                ],
+                            Positioned(
+                              bottom: 6,
+                              left: 6,
+                              child: CustomProductPriceWidget(
+                                product: product,
+                                tagKey: tagKey,
                               ),
-                            ),
-                            if (!Utils.isOwnerItem(valueHolder, product))
-                              Positioned(
-                                  top: PsDimens.space6,
-                                  right: PsDimens.space6,
-                                  child: GestureDetector(
-                                      onTap: () {
-                                        onDetailClick(context);
-                                      },
-                                      child: Container(
-                                          padding: const EdgeInsets.only(
-                                              top: PsDimens.space4,
-                                              left: PsDimens.space4,
-                                              right: PsDimens.space4,
-                                              bottom: PsDimens.space4),
-                                          decoration: BoxDecoration(
-                                              color: PsColors.achromatic50,
-                                              border: Border.all(
-                                                  color: PsColors.achromatic50),
-                                              shape: BoxShape.circle),
-                                          child: product.isFavourited ==
-                                                      PsConst.ZERO ||
-                                                  Utils.isLoginUserEmpty(
-                                                      valueHolder)
-                                              ? Icon(Icons.favorite_border,
-                                                  color: PsColors.text500,
-                                                  size: 20)
-                                              : Icon(Icons.favorite,
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  size: 20)))),
+                            )
+                            // Container(
+                            //   alignment: Alignment.topLeft,
+                            //   child: Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.start,
+                            //     children: <Widget>[
+                            //       if (product.isSoldOutItem)
+                            //         Container(
+                            //           margin: const EdgeInsets.only(
+                            //               top: PsDimens.space4,
+                            //               left: PsDimens.space4,
+                            //               right: PsDimens.space4),
+                            //           height: 25,
+                            //           decoration: BoxDecoration(
+                            //               borderRadius: BorderRadius.circular(
+                            //                   PsDimens.space4),
+                            //               color:
+                            //                   Theme.of(context).primaryColor),
+                            //           child: Padding(
+                            //               padding: const EdgeInsets.only(
+                            //                   top: PsDimens.space4,
+                            //                   left: PsDimens.space4,
+                            //                   right: PsDimens.space4),
+                            //               child: Text('dashboard__sold_out'.tr,
+                            //                   textAlign: TextAlign.start,
+                            //                   maxLines: 1,
+                            //                   overflow: TextOverflow.ellipsis,
+                            //                   style: Theme.of(context)
+                            //                       .textTheme
+                            //                       .bodyMedium!
+                            //                       .copyWith(
+                            //                           color: PsColors
+                            //                               .achromatic50))),
+                            //         ),
+                            //       if (product.paidStatus ==
+                            //           PsConst.PAID_AD_PROGRESS)
+                            //         Container(
+                            //           margin: const EdgeInsets.only(
+                            //               top: PsDimens.space4,
+                            //               left: PsDimens.space4,
+                            //               right: PsDimens.space4),
+                            //           height: 25,
+                            //           decoration: BoxDecoration(
+                            //               borderRadius: BorderRadius.circular(
+                            //                   PsDimens.space4),
+                            //               color: PsColors.success400),
+                            //           child: Padding(
+                            //               padding: const EdgeInsets.only(
+                            //                   top: PsDimens.space4,
+                            //                   left: PsDimens.space4,
+                            //                   right: PsDimens.space4),
+                            //               child: Text(
+                            //                   'dashboard__is_featured'.tr,
+                            //                   textAlign: TextAlign.start,
+                            //                   maxLines: 1,
+                            //                   overflow: TextOverflow.ellipsis,
+                            //                   style: Theme.of(context)
+                            //                       .textTheme
+                            //                       .bodyMedium!
+                            //                       .copyWith(
+                            //                           color: PsColors
+                            //                               .achromatic50))),
+                            //         ),
+                            //       if (showDiscount)
+                            //         Container(
+                            //           margin: const EdgeInsets.only(
+                            //               top: PsDimens.space4,
+                            //               left: PsDimens.space4,
+                            //               right: PsDimens.space4),
+                            //           height: 25,
+                            //           decoration: BoxDecoration(
+                            //               borderRadius: BorderRadius.circular(
+                            //                   PsDimens.space4),
+                            //               color: PsColors.error500),
+                            //           child: Padding(
+                            //               padding: const EdgeInsets.only(
+                            //                   top: PsDimens.space4,
+                            //                   left: PsDimens.space4,
+                            //                   right: PsDimens.space4),
+                            //               child: Text(
+                            //                   '${product.discountRate}% ${'dashboard__is_discount'.tr}',
+                            //                   textAlign: TextAlign.start,
+                            //                   maxLines: 1,
+                            //                   overflow: TextOverflow.ellipsis,
+                            //                   style: Theme.of(context)
+                            //                       .textTheme
+                            //                       .bodyMedium!
+                            //                       .copyWith(
+                            //                           color: PsColors
+                            //                               .achromatic50))),
+                            //         ),
+                            //     ],
+                            //   ),
+                            // ),
+                            // if (!Utils.isOwnerItem(valueHolder, product))
+                            // Positioned(
+                            //     top: PsDimens.space6,
+                            //     right: PsDimens.space6,
+                            //     child: GestureDetector(
+                            //         onTap: () {
+                            //           onDetailClick(context);
+                            //         },
+                            //         child: Container(
+                            //             padding: const EdgeInsets.only(
+                            //                 top: PsDimens.space4,
+                            //                 left: PsDimens.space4,
+                            //                 right: PsDimens.space4,
+                            //                 bottom: PsDimens.space4),
+                            //             decoration: BoxDecoration(
+                            //                 color: PsColors.achromatic50,
+                            //                 border: Border.all(
+                            //                     color: PsColors.achromatic50),
+                            //                 shape: BoxShape.circle),
+                            //             child: product.isFavourited ==
+                            //                         PsConst.ZERO ||
+                            //                     Utils.isLoginUserEmpty(
+                            //                         valueHolder)
+                            //                 ? Icon(Icons.favorite_border,
+                            //                     color: PsColors.text500,
+                            //                     size: 20)
+                            //                 : Icon(Icons.favorite,
+                            //                     color: Theme.of(context)
+                            //                         .primaryColor,
+                            //                     size: 20)))),
                           ],
                         ),
                       ),
@@ -247,10 +255,6 @@ class ProductHorizontalListItem extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            CustomProductPriceWidget(
-                              product: product,
-                              tagKey: tagKey,
-                            ),
                             // Row(
                             //   children: <Widget>[
                             //     Column(
@@ -315,31 +319,20 @@ class ProductHorizontalListItem extends StatelessWidget {
                                 Expanded(
                                   child: Row(
                                     children: <Widget>[
-                                      Icon(
-                                        Icons.location_on_outlined,
-                                        size: 12,
-                                        color: Utils.isLightMode(context)
-                                            ? PsColors.text500
-                                            : PsColors.text400,
-                                      ),
+                                      // Icon(
+                                      //   Icons.location_on_outlined,
+                                      //   size: 12,
+                                      //   color: Utils.isLightMode(context)
+                                      //       ? PsColors.text500
+                                      //       : PsColors.text400,
+                                      // ),
                                       Expanded(
                                           child: Padding(
                                               padding: const EdgeInsets.only(
                                                   left: PsDimens.space4,
                                                   right: PsDimens.space4),
                                               child: Text(
-                                                  valueHolder.isSubLocation ==
-                                                          PsConst.ONE
-                                                      ? (product.itemLocationTownship!
-                                                                      .townshipName !=
-                                                                  '' &&
-                                                              product.itemLocationTownship!
-                                                                      .townshipName !=
-                                                                  null)
-                                                          ? // check optional township is empty
-                                                          '${product.itemLocationTownship!.townshipName}'
-                                                          : '${product.itemLocation!.name}'
-                                                      : '${product.itemLocation!.name}',
+                                                  '${product.description}',
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.start,
@@ -359,95 +352,95 @@ class ProductHorizontalListItem extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            if (valueHolder.isShowOwnerInfo! &&
-                                product.vendorId != '' &&
-                                valueHolder.vendorFeatureSetting == PsConst.ONE)
-                              CustomProductShopOwnerInfoWidget(
-                                tagKey: tagKey,
-                                product: product,
-                              )
-                            else if (valueHolder.isShowOwnerInfo!)
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  left: PsDimens.space4,
-                                  top: PsDimens.space8,
-                                ),
-                                child: Row(
-                                  children: <Widget>[
-                                    Stack(children: <Widget>[
-                                      Container(
-                                        child: SizedBox(
-                                          width: PsDimens.space40,
-                                          height: PsDimens.space40,
-                                          child: PsNetworkCircleImageForUser(
-                                            photoKey: '',
-                                            imagePath:
-                                                product.user?.userCoverPhoto,
-                                            // width: PsDimens.space40,
-                                            // height: PsDimens.space40,
-                                            boxfit: BoxFit.cover,
-                                            onTap: () {
-                                              onDetailClick(context);
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                      if (product.user!.isVefifiedBlueMarkUser)
-                                        const Positioned(
-                                          right: -1,
-                                          bottom: -1,
-                                          child: BluemarkIcon(),
-                                        ),
-                                    ]),
-                                    const SizedBox(width: PsDimens.space8),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            bottom: PsDimens.space8,
-                                            top: PsDimens.space8),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                Flexible(
-                                                  child: Text(
-                                                      product.user?.name == ''
-                                                          ? 'default__user_name'
-                                                              .tr
-                                                          : '${product.user?.name}',
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      maxLines: 1,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .bodyLarge),
-                                                ),
-                                              ],
-                                            ),
-                                            Text('${product.addedDateStr}',
-                                                textAlign: TextAlign.start,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .bodySmall!
-                                                    .copyWith(
-                                                        color: Utils
-                                                                .isLightMode(
-                                                                    context)
-                                                            ? PsColors.text500
-                                                            : PsColors.text400))
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
+                            // if (valueHolder.isShowOwnerInfo! &&
+                            //     product.vendorId != '' &&
+                            //     valueHolder.vendorFeatureSetting == PsConst.ONE)
+                            //   CustomProductShopOwnerInfoWidget(
+                            //     tagKey: tagKey,
+                            //     product: product,
+                            //   )
+                            // else if (valueHolder.isShowOwnerInfo!)
+                            //   Padding(
+                            //     padding: const EdgeInsets.only(
+                            //       left: PsDimens.space4,
+                            //       top: PsDimens.space8,
+                            //     ),
+                            //     child: Row(
+                            //       children: <Widget>[
+                            //         Stack(children: <Widget>[
+                            //           Container(
+                            //             child: SizedBox(
+                            //               width: PsDimens.space40,
+                            //               height: PsDimens.space40,
+                            //               child: PsNetworkCircleImageForUser(
+                            //                 photoKey: '',
+                            //                 imagePath:
+                            //                     product.user?.userCoverPhoto,
+                            //                 // width: PsDimens.space40,
+                            //                 // height: PsDimens.space40,
+                            //                 boxfit: BoxFit.cover,
+                            //                 onTap: () {
+                            //                   onDetailClick(context);
+                            //                 },
+                            //               ),
+                            //             ),
+                            //           ),
+                            //           if (product.user!.isVefifiedBlueMarkUser)
+                            //             const Positioned(
+                            //               right: -1,
+                            //               bottom: -1,
+                            //               child: BluemarkIcon(),
+                            //             ),
+                            //         ]),
+                            //         const SizedBox(width: PsDimens.space8),
+                            //         Expanded(
+                            //           child: Padding(
+                            //             padding: const EdgeInsets.only(
+                            //                 bottom: PsDimens.space8,
+                            //                 top: PsDimens.space8),
+                            //             child: Column(
+                            //               crossAxisAlignment:
+                            //                   CrossAxisAlignment.start,
+                            //               children: <Widget>[
+                            //                 Row(
+                            //                   mainAxisAlignment:
+                            //                       MainAxisAlignment.start,
+                            //                   children: <Widget>[
+                            //                     Flexible(
+                            //                       child: Text(
+                            //                           product.user?.name == ''
+                            //                               ? 'default__user_name'
+                            //                                   .tr
+                            //                               : '${product.user?.name}',
+                            //                           textAlign:
+                            //                               TextAlign.start,
+                            //                           maxLines: 1,
+                            //                           overflow:
+                            //                               TextOverflow.ellipsis,
+                            //                           style: Theme.of(context)
+                            //                               .textTheme
+                            //                               .bodyLarge),
+                            //                     ),
+                            //                   ],
+                            //                 ),
+                            //                 Text('${product.addedDateStr}',
+                            //                     textAlign: TextAlign.start,
+                            //                     style: Theme.of(context)
+                            //                         .textTheme
+                            //                         .bodySmall!
+                            //                         .copyWith(
+                            //                             color: Utils
+                            //                                     .isLightMode(
+                            //                                         context)
+                            //                                 ? PsColors.text500
+                            //                                 : PsColors.text400))
+                            //               ],
+                            //             ),
+                            //           ),
+                            //         )
+                            //       ],
+                            //     ),
+                            //   ),
                             const SizedBox(
                               height: PsDimens.space6,
                             ),

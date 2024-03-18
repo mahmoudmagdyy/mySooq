@@ -33,7 +33,7 @@ class SubCategoryVerticalData extends StatelessWidget {
         isLoading ? valueHolder.loadingShimmerItemCount! : provider.dataLength;
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100.0, childAspectRatio: 0.8),
+          maxCrossAxisExtent: 150.0, childAspectRatio: 0.8),
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           addAlreadySubscribedDataToTemp(

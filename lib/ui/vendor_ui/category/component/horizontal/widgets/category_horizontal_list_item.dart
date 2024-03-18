@@ -47,13 +47,14 @@ class CategoryHorizontalListItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(
             horizontal: PsDimens.space6, vertical: PsDimens.space8),
         child: Container(
+          clipBehavior: Clip.none,
           // decoration: BoxDecoration(
           //   color: PsColors.cardBackgroundColor,
           //   borderRadius:
           //       const BorderRadius.all(Radius.circular(PsDimens.space16)),
           // ),
           width: PsDimens.space80,
-          height: PsDimens.space80,
+          height: PsDimens.space100,
           child: isLoading
               ? const ShimmerItem()
               : InkWell(
@@ -76,8 +77,8 @@ class CategoryHorizontalListItem extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(PsDimens.space6),
                             child: Container(
-                              width: PsDimens.space60,
-                              height: PsDimens.space60,
+                              width: PsDimens.space80,
+                              height: PsDimens.space80,
                               color: Utils.isLightMode(context)
                                   ? PsColors.text50
                                   : PsColors.achromatic200,

@@ -76,13 +76,19 @@ class _ListHeaderWidget extends StatelessWidget {
                 ),
                 Visibility(
                   visible: showViewAll,
-                  child: Text(
-                    'dashboard__view_all'.tr,
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
+                  child: Row(
+                    children: [
+
+                      Text(
+                        'dashboard__view_all'.tr,
+                        textAlign: TextAlign.start,
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            color:  Theme.of(context).primaryColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Icon(Icons.arrow_forward,   color:Theme.of(context).primaryColor,),
+                    ],
                   ),
                 ),
               ],

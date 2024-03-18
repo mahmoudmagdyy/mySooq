@@ -24,7 +24,7 @@ class TopSellerVerticalListWidget extends StatelessWidget {
               MediaQuery.of(context).size.width)
           ? MediaQuery.of(context).size.height /
               MediaQuery.of(context).size.width /
-              1.8
+              2
           : MediaQuery.of(context).size.width /
               MediaQuery.of(context).size.height /
               0.85;
@@ -36,7 +36,7 @@ class TopSellerVerticalListWidget extends StatelessWidget {
           //   child:
           SliverGrid(
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.8,
+                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.9,
                   childAspectRatio: ratio),
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {

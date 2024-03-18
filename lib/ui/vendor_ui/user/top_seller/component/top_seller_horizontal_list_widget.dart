@@ -41,7 +41,7 @@ class TopSellerHorizontalListWidget extends StatelessWidget {
                   },
                 ),
                 Container(
-                  height: 150,
+                  height: 170,
                   child: ListView.builder(
                       shrinkWrap: false,
                       padding: const EdgeInsets.only(right: PsDimens.space8, left: PsDimens.space8),
